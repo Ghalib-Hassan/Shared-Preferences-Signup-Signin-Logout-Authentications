@@ -5,7 +5,8 @@ class GeneralTextField extends StatefulWidget {
   final String labelText;
   final TextEditingController? generalcontroller;
 
-  const GeneralTextField({super.key, required this.labelText, this.generalcontroller});
+  const GeneralTextField(
+      {super.key, required this.labelText, this.generalcontroller});
 
   @override
   _GeneralTextFieldState createState() => _GeneralTextFieldState();
@@ -17,6 +18,7 @@ class _GeneralTextFieldState extends State<GeneralTextField> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextField(
+        keyboardType: TextInputType.emailAddress,
         controller: widget.generalcontroller,
         style: TextStyle(color: Colors.black, fontSize: 12.sp),
         decoration: InputDecoration(

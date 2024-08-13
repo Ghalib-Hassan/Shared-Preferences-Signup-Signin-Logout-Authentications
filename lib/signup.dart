@@ -18,7 +18,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController signupEmail = TextEditingController();
   TextEditingController signupPassword = TextEditingController();
   TextEditingController signupConfirm = TextEditingController();
-  TextEditingController signupName = TextEditingController();
+  TextEditingController signup_Name = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class _SignUpState extends State<SignUp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GeneralTextField(
-                          generalcontroller: signupName,
+                          generalcontroller: signup_Name,
                           labelText: 'Full Name'),
                       SizedBox(height: 10.h),
                       GeneralTextField(
@@ -109,7 +109,11 @@ class _SignUpState extends State<SignUp> {
                                   ..hideCurrentSnackBar()
                                   ..showSnackBar(snackBar);
                               } else {
-                                sp.setString('signupName', signupName.text);
+                                String signupName = signup_Name.text.isEmpty
+                                    ? 'Anonymous'
+                                    : signup_Name.text;
+                                sp.setString(
+                                    'signupName', signupName.toString());
                                 sp.setString('signupEmail', signupEmail.text);
                                 sp.setString(
                                     'signupPassword', signupPassword.text);
