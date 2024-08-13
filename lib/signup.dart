@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preference_signup_login/Custom_Widgets/password_field.dart';
 import 'package:shared_preference_signup_login/Custom_Widgets/text_field.dart';
-import 'package:shared_preference_signup_login/both.dart';
+import 'package:shared_preference_signup_login/first_screen.dart';
 import 'package:shared_preference_signup_login/signin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -193,7 +193,8 @@ class _SignUpState extends State<SignUp> {
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => const SignIn()));
+                                            builder: (context) =>
+                                                const SignIn()));
                                   },
                                   child: Text(
                                     'Sign In',

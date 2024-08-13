@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shared_preference_signup_login/both.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shared_preference_signup_login/first_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +29,52 @@ class MyApp extends StatelessWidget {
             home: child,
           );
         },
-        child: const MainScreen());
+        child: const Splash());
+  }
+}
+
+class Splash extends StatefulWidget {
+  const Splash({super.key});
+
+  @override
+  State<Splash> createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const MainScreen()));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Stack(children: [
+      Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [Colors.red.shade300, Colors.black])),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            SizedBox(
+              height: 50.h,
+            ),
+            const FaIcon(
+              FontAwesomeIcons.dumbbell,
+              size: 100,
+            ),
+            Text(
+              'FITNESS CLUB',
+              style: TextStyle(fontSize: 20.sp),
+            ),
+          ]))
+    ]));
   }
 }

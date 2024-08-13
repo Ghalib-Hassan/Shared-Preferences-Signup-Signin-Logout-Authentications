@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shared_preference_signup_login/both.dart';
+import 'package:shared_preference_signup_login/first_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -139,7 +139,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           end: Alignment.centerRight,
                           colors: [Colors.red.shade300, Colors.black],
                         ),
-                        borderRadius: const BorderRadius.all(Radius.circular(30)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(30)),
                       ),
                       child: Container(
                         alignment: Alignment.center,
