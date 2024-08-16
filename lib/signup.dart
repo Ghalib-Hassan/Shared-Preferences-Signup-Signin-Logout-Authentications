@@ -105,6 +105,7 @@ class _SignUpState extends State<SignUp> {
                                   ),
                                 );
 
+                                // ignore: use_build_context_synchronously
                                 ScaffoldMessenger.of(context)
                                   ..hideCurrentSnackBar()
                                   ..showSnackBar(snackBar);
@@ -119,8 +120,10 @@ class _SignUpState extends State<SignUp> {
                                     'signupPassword', signupPassword.text);
                                 sp.setString(
                                     'signupConfirm', signupConfirm.text);
+                                sp.setBool('isLogin', true);
 
                                 Navigator.push(
+                                  // ignore: use_build_context_synchronously
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => const MainScreen(),
@@ -140,6 +143,7 @@ class _SignUpState extends State<SignUp> {
                                 ),
                               );
 
+                              // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context)
                                 ..hideCurrentSnackBar()
                                 ..showSnackBar(snackBar);

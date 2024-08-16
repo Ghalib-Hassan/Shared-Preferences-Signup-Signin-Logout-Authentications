@@ -118,7 +118,8 @@ class _SignInState extends State<SignIn> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const HomeScreen()));
+                                        builder: (context) =>
+                                            const HomeScreen()));
                               } else {
                                 final snackBar = SnackBar(
                                   elevation: 0,
@@ -190,7 +191,8 @@ class _SignInState extends State<SignIn> {
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => const SignUp()));
+                                            builder: (context) =>
+                                                const SignUp()));
                                   },
                                   child: Text(
                                     'Sign Up',
